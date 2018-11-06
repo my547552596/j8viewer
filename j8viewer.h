@@ -1,27 +1,28 @@
-#include "Atwo.h"
+#include "../bo/xSeal_cpp.h"
+
 #define IDR_MAINFRAME 128
 
 class appin : public CWinApp {
 public:
-	virtual BOOL ExitInstance();
-	virtual BOOL InitInstance();
+    virtual BOOL ExitInstance();
+    virtual BOOL InitInstance();
 
 protected:
-	GdiplusStartupInput m_gdiplusInput;
-	ULONG_PTR m_gdiplusToken;
+    GdiplusStartupInput m_gdiplusInput;
+    ULONG_PTR m_gdiplusToken;
 };
 
 class j8viewer : public CFrameWnd {
 public:
-	j8viewer(char *iPath);
+    j8viewer(char *iPath);
 
 protected:
-	afx_msg void OnDropFiles(HDROP h);
-	afx_msg void OnPaint();
-	afx_msg void OnShowWindow();
-	DECLARE_MESSAGE_MAP();
+    afx_msg void OnDropFiles(HDROP h);
+    afx_msg void OnPaint();
+    afx_msg void OnShowWindow();
+    DECLARE_MESSAGE_MAP();
 
 private:
-	char *imgPath;
-	void autoSize(int imgHeight, int imgWidth);
+    char *imgPath;
+    void autoSize(int imgHeight, int imgWidth);
 };
